@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Real Jetson</title>
+<meta name="description" content="Photographs and clips of Jetson, the real black Labrador behind the novel Jetson&rsquo;s Journey, 2021 to 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,430;9..144,620&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pine:#1F2B22; --pine-deep:#161F18; --paper:#EFE9DC;
+  --sage:#93A392; --brass:#C9A45C; --line:rgba(239,233,220,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--pine);color:var(--paper);font-family:'Source Sans 3',sans-serif;font-size:16px;line-height:1.55}
+img,video{display:block;max-width:100%}
+a{color:var(--brass)}
+
+.hero{position:relative;height:72vh;min-height:420px;overflow:hidden;background:var(--pine-deep)}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:center 40%}
+@media (prefers-reduced-motion:no-preference){
+  .hero img{transform:scale(1.06);animation:settle 2.4s ease-out forwards}
+  @keyframes settle{to{transform:scale(1)}}
+}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(22,31,24,.92) 0%, rgba(22,31,24,.25) 45%, rgba(22,31,24,0) 70%)}
+.hero-copy{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 24px 40px;max-width:980px;margin:0 auto}
+h1{font-family:Fraunces,serif;font-weight:620;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.02;letter-spacing:-.01em}
+.hero-sub{margin-top:14px;max-width:34em;font-size:1.05rem}
+.hero-sub em{font-style:italic}
+
+.filters{position:sticky;top:0;z-index:10;background:linear-gradient(var(--pine) 82%,transparent);max-width:100%;padding:18px 24px 14px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.chip{font:inherit;font-weight:600;font-size:.92rem;color:var(--paper);background:var(--pine);border:1px solid var(--line);border-radius:999px;padding:7px 16px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);color:var(--pine-deep)}
+.chip:focus-visible,.card:focus-visible,.lb-btn:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+.year{max-width:980px;margin:0 auto;padding:26px 24px 6px}
+.year-head{display:flex;align-items:baseline;gap:18px;border-top:1px solid var(--line);padding-top:26px;flex-wrap:wrap}
+.year-num{font-family:Fraunces,serif;font-weight:340;font-size:clamp(2.4rem,5vw,3.4rem);color:var(--brass);line-height:1}
+.year-note{font-family:Fraunces,serif;font-style:italic;font-weight:430;color:var(--sage);font-size:1.08rem;max-width:30em}
+
+.grid{columns:3 260px;column-gap:16px;padding:20px 0 8px}
+.card{display:block;width:100%;break-inside:avoid;margin:0 0 16px;background:var(--pine-deep);border:none;padding:0;cursor:pointer;text-align:left;font:inherit;color:inherit;border-radius:4px;overflow:hidden}
+.card .frame{position:relative;display:block}
+.card img{width:100%;border-radius:4px 4px 0 0}
+.badge{position:absolute;right:10px;bottom:10px;width:38px;height:38px;border-radius:50%;background:rgba(22,31,24,.78);display:grid;place-items:center}
+.badge svg{width:14px;height:14px;fill:var(--paper);margin-left:2px}
+.cap{display:block;padding:10px 12px 12px;font-size:.9rem}
+.cap .when{color:var(--sage);font-size:.83rem;display:block;margin-top:2px}
+.card[hidden]{display:none}
+
+.lb{position:fixed;inset:0;z-index:50;background:rgba(12,17,13,.94);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.open{display:flex}
+@media (prefers-reduced-motion:no-preference){.lb.open{animation:fade .22s ease-out}@keyframes fade{from{opacity:0}}}
+.lb-inner{max-width:min(92vw,860px);width:100%}
+.lb-media img,.lb-media video{width:100%;max-height:74vh;object-fit:contain;border-radius:4px;background:#000}
+.lb-cap{margin-top:12px;display:flex;justify-content:space-between;gap:16px;align-items:baseline;flex-wrap:wrap}
+.lb-cap .when{color:var(--sage)}
+.lb-btn{position:fixed;background:rgba(239,233,220,.1);border:1px solid var(--line);color:var(--paper);width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:20px;line-height:1;display:grid;place-items:center;z-index:51}
+.lb-close{top:18px;right:18px}
+.lb-prev{left:14px;top:50%;transform:translateY(-50%)}
+.lb-next{right:14px;top:50%;transform:translateY(-50%)}
+
+footer{max-width:980px;margin:0 auto;padding:36px 24px 56px;border-top:1px solid var(--line);color:var(--sage);font-size:.92rem}
+footer p+p{margin-top:8px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="poster/c33.jpg" alt="Overhead view of Jetson, a black Labrador, rolling on his back in green grass">
+  <div class="hero-copy">
+    <h1>The Real Jetson</h1>
+    <p class="hero-sub">Readers ask, and the answer is yes&mdash;he&rsquo;s real. Six years of the black Labrador behind <em>Jetson&rsquo;s Journey</em>, from the whelping box to Franklin, Tennessee.</p>
+  </div>
+</header>
+
+<nav class="filters" aria-label="Filter the gallery">
+  <button class="chip" aria-pressed="true"  data-kind="all">Everything</button>
+  <button class="chip" aria-pressed="false" data-kind="photo">Photos</button>
+  <button class="chip" aria-pressed="false" data-kind="clip">Clips</button>
+  <button class="chip" aria-pressed="false" data-kind="air">Incredible footage</button>
+  <button class="chip" aria-pressed="false" data-kind="portrait">Portraits</button>
+</nav>
+
+<section class="year">
+  <div class="year-head"><span class="year-num">2021</span><span class="year-note">The puppy year: a whelping box in California, then a household in full surrender.</span></div>
+  <div class="grid">
+    <button class="card" data-kind="photo" data-idx="0"><span class="frame"><img loading="lazy" src="thumb/p39.jpg" alt="Black-and-white photo of a litter of Labrador puppies asleep on a cot, one yellow puppy at right"></span><span class="cap">The whole crew, in black and white. Jetson far left.<span class="when">March 2021</span></span></button>
+    <button class="card" data-kind="clip" data-idx="1"><span class="frame"><img loading="lazy" src="poster/c01.jpg" alt="Tiny black Lab puppy eating from a blue slow-feeder bowl"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Dinner via slow feeder. It did not slow him much.<span class="when">Spring 2021, 9s</span></span></button>
+    <button class="card" data-kind="photo" data-idx="2"><span class="frame"><img loading="lazy" src="thumb/p01.jpg" alt="A row of young Labrador puppies, black and yellow, asleep on a gray blanket"></span><span class="cap">The litter at five weeks old. Jetson is on the far left.<span class="when">February 2021</span></span></button>
+    <button class="card" data-kind="photo" data-idx="3"><span class="frame"><img loading="lazy" src="thumb/p02.jpg" alt="Six black Lab puppies and one yellow puppy piled on a red cot outdoors"></span><span class="cap">Seven weeks old, cot at capacity.<span class="when">March 2021</span></span></button>
+    <button class="card" data-kind="photo" data-idx="4"><span class="frame"><img loading="lazy" src="thumb/p03.jpg" alt="A black Lab puppy standing on pavement, looking up at the camera"></span><span class="cap">First meeting at the breeder.<span class="when">March 2021</span></span></button>
+    <button class="card" data-kind="photo" data-idx="5"><span class="frame"><img loading="lazy" src="thumb/p04.jpg" alt="A black Lab puppy sprawled asleep on a shaggy gray rug, seen from above"></span><span class="cap">New house, approved rug.<span class="when">April 2021</span></span></button>
+    <button class="card" data-kind="clip" data-idx="6"><span class="frame"><img loading="lazy" src="poster/c16.jpg" alt="Black Lab puppy on a hardwood floor wrestling a paper grocery bag"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">The great paper bag campaign. Sound on.<span class="when">April 2021, 17s</span></span></button>
+    <button class="card" data-kind="photo" data-idx="7"><span class="frame"><img loading="lazy" src="thumb/p05.jpg" alt="A black Lab puppy asleep on its back on carpet, belly showing"></span><span class="cap">Belly up, fully off duty.<span class="when">April 2021</span></span></button>
+    <button class="card" data-kind="photo" data-idx="8"><span class="frame"><img loading="lazy" src="thumb/p06.jpg" alt="A black Lab puppy sitting neatly on gravel"></span><span class="cap">An early formal portrait.<span class="when">April 2021</span></span></button>
+    <button class="card" data-kind="photo" data-idx="9"><span class="frame"><img loading="lazy" src="thumb/p07.jpg" alt="A black Lab puppy asleep on white bedding"></span><span class="cap">The bed was claimed early.<span class="when">April 2021</span></span></button>
+    <button class="card" data-kind="photo" data-idx="10"><span class="frame"><img loading="lazy" src="thumb/p40.jpg" alt="Close overhead view of a black Lab puppy looking straight up at the camera"></span><span class="cap">The stare that got him everything.<span class="when">Spring 2021</span></span></button>
+    <button class="card" data-kind="clip" data-idx="11"><span class="frame"><img loading="lazy" src="poster/c03.jpg" alt="Black Lab puppy racing in circles on a hardwood floor"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Zoomies, hardwood edition. Sound on.<span class="when">May 2021, 25s</span></span></button>
+    <button class="card" data-kind="photo" data-idx="12"><span class="frame"><img loading="lazy" src="thumb/p08.jpg" alt="A black Lab puppy sitting on a hardwood floor, looking up"></span><span class="cap">Waiting on dinner, politely.<span class="when">May 2021</span></span></button>
+    <button class="card" data-kind="clip" data-idx="13"><span class="frame"><img loading="lazy" src="poster/c04.jpg" alt="Black Lab puppy lying flat on a step chewing a red toy"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Bathtub step, red Kong, full sploot.<span class="when">May 2021, 25s</span></span></button>
+    <button class="card" data-kind="photo" data-idx="14"><span class="frame"><img loading="lazy" src="thumb/p09.jpg" alt="A black Lab puppy on a leash on a sandy path, mouth open happily"></span><span class="cap">Leash walk, maximum grin.<span class="when">May 2021</span></span></button>
+    <button class="card" data-kind="clip" data-idx="15"><span class="frame"><img loading="lazy" src="poster/c05.jpg" alt="Black Lab puppy leaping at low tree leaves in a backyard"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">The leaves started it.<span class="when">May 2021, 25s</span></span></button>
+    <button class="card" data-kind="photo" data-idx="16"><span class="frame"><img loading="lazy" src="thumb/p10.jpg" alt="A black Lab puppy on its back on a shaggy rug, wrestling a chew bone"></span><span class="cap">The bone put up a fight.<span class="when">May 2021</span></span></button>
+    <button class="card" data-kind="photo" data-idx="17"><span class="frame"><img loading="lazy" src="thumb/p17.jpg" alt="A black Lab puppy asleep under a round concrete coffee table"></span><span class="cap">Parking spot: under the table.<span class="when">May 2021</span></span></button>
+    <button class="card" data-kind="photo" data-idx="18"><span class="frame"><img loading="lazy" src="thumb/p41.jpg" alt="A black Lab seen from behind, sitting on a bluff facing a foggy ocean"></span><span class="cap">First look at the Pacific, considered at length.<span class="when">May 2021</span></span></button>
+    <button class="card" data-kind="photo" data-idx="19"><span class="frame"><img loading="lazy" src="thumb/p19.jpg" alt="Close-up of a black Lab puppy sound asleep on a shaggy rug"></span><span class="cap">Deep sleep, close range.<span class="when">June 2021</span></span></button>
+    <button class="card" data-kind="photo" data-idx="20"><span class="frame"><img loading="lazy" src="thumb/p18.jpg" alt="A black Lab puppy sitting beside a pale fire hydrant on a sunny sidewalk"></span><span class="cap">The hydrant series begins.<span class="when">June 2021</span></span></button>
+    <button class="card" data-kind="photo" data-idx="21"><span class="frame"><img loading="lazy" src="thumb/p20.jpg" alt="A young black Lab sitting beside the same fire hydrant, noticeably bigger"></span><span class="cap">The hydrant, one month on.<span class="when">July 2021</span></span></button>
+    <button class="card" data-kind="photo" data-idx="22"><span class="frame"><img loading="lazy" src="thumb/p21.jpg" alt="A young black Lab sitting beside a fire hydrant on a sidewalk"></span><span class="cap">The hydrant, gaining.<span class="when">July 2021</span></span></button>
+    <button class="card" data-kind="photo" data-idx="23"><span class="frame"><img loading="lazy" src="thumb/p22.jpg" alt="A black Lab sitting beside a fire hydrant, nearly its height"></span><span class="cap">The hydrant, nearly level.<span class="when">August 2021</span></span></button>
+    <button class="card" data-kind="photo" data-idx="24"><span class="frame"><img loading="lazy" src="thumb/p23.jpg" alt="A grown black Lab sitting beside a fire hydrant, now taller than it"></span><span class="cap">The hydrant, surpassed.<span class="when">September 2021</span></span></button>
+    <button class="card" data-kind="clip" data-idx="25"><span class="frame"><img loading="lazy" src="poster/c06.jpg" alt="Black Lab standing over a ball on a turf field, staring at the camera"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Ball delivered. Your move.<span class="when">October 2021, 14s</span></span></button>
+    <button class="card" data-kind="photo" data-idx="26"><span class="frame"><img loading="lazy" src="thumb/p24.jpg" alt="A black Lab wearing silver sunglasses, close up"></span><span class="cap">Incognito.<span class="when">November 2021</span></span></button>
+    <button class="card" data-kind="clip" data-idx="27"><span class="frame"><img loading="lazy" src="poster/c07.jpg" alt="Wide landscape of a black Lab in a hillside meadow with a mountain vista"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">A hillside meadow, surveyed.<span class="when">December 2021, 22s</span></span></button>
+    <button class="card" data-kind="photo" data-idx="28"><span class="frame"><img loading="lazy" src="thumb/p25.jpg" alt="A black Lab carrying a large striped Christmas toy through a house"></span><span class="cap">December delivery, self-assigned.<span class="when">December 2021</span></span></button>
+  </div>
+</section>
+
+<section class="year">
+  <div class="year-head"><span class="year-num">2022</span><span class="year-note">The coast years: beaches, turf fields, and some incredible footage.</span></div>
+  <div class="grid">
+    <button class="card" data-kind="clip" data-idx="29"><span class="frame"><img loading="lazy" src="poster/c08.jpg" alt="Black Lab on a soccer field, tail mid-wag"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">The tail never stops.<span class="when">January 2022, 18s</span></span></button>
+    <button class="card" data-kind="clip" data-idx="30"><span class="frame"><img loading="lazy" src="poster/c09.jpg" alt="Black Lab playing in the surf at a wide sandy beach"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Surf work at Pismo Beach.<span class="when">January 2022, 28s</span></span></button>
+    <button class="card" data-kind="clip" data-idx="31"><span class="frame"><img loading="lazy" src="poster/c26.jpg" alt="Black Lab with a ball on wet sand at golden hour, running into the surf"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Golden hour at Grover Beach.<span class="when">March 2022, 28s</span></span></button>
+    <button class="card" data-kind="clip" data-idx="32"><span class="frame"><img loading="lazy" src="poster/c27.jpg" alt="Black Lab chasing a ball across a bright green turf field"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Turf, ball, business as usual.<span class="when">March 2022, 23s</span></span></button>
+    <button class="card" data-kind="clip" data-idx="33"><span class="frame"><img loading="lazy" src="poster/c30.jpg" alt="Black Lab sprinting long fetch runs across an open park lawn"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Long fetch, full field.<span class="when">April 2022, 28s</span></span></button>
+    <button class="card" data-kind="photo" data-idx="34"><span class="frame"><img loading="lazy" src="thumb/p26.jpg" alt="A black Lab mid head-shake on a dry trail, ears flying"></span><span class="cap">Super-Incognito.<span class="when">April 2022</span></span></button>
+    <button class="card" data-kind="photo" data-idx="35"><span class="frame"><img loading="lazy" src="thumb/p27.jpg" alt="A black Lab standing on wet sand at the shoreline"></span><span class="cap">Shoreline patrol.<span class="when">May 2022</span></span></button>
+    <button class="card" data-kind="photo" data-idx="36"><span class="frame"><img loading="lazy" src="thumb/p28.jpg" alt="A black Lab watching a black cat perched on a small table by a window"></span><span class="cap">A standoff with Binx. No winner declared.<span class="when">May 2022</span></span></button>
+    <button class="card" data-kind="photo" data-idx="37"><span class="frame"><img loading="lazy" src="thumb/p29.jpg" alt="A black Lab looking up at the camera from under a cafe table"></span><span class="cap">Under the cafe table, watching for crumbs.<span class="when">May 2022</span></span></button>
+    <button class="card" data-kind="photo" data-idx="38"><span class="frame"><img loading="lazy" src="thumb/p30.jpg" alt="A black Lab sitting on a beach with sand covering its nose"></span><span class="cap">Sand: investigated thoroughly.<span class="when">June 2022</span></span></button>
+    <button class="card" data-kind="photo" data-idx="39"><span class="frame"><img loading="lazy" src="thumb/p42.jpg" alt="A young black Lab standing in green grass, looking at the camera"></span><span class="cap">Front and square.<span class="when">2022</span></span></button>
+    <button class="card" data-kind="air clip" data-idx="40"><span class="frame"><img loading="lazy" src="poster/c33.jpg" alt="Straight-down overhead view of a black Lab rolling on its back on turf"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Overhead: astroturf, lots of bouncing.<span class="when">August 2022, 6s</span></span></button>
+    <button class="card" data-kind="air clip" data-idx="41"><span class="frame"><img loading="lazy" src="poster/c37.jpg" alt="Overhead view of a black Lab rolling in grass, pulling back to show the yard"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">The roll, then the reveal.<span class="when">August 2022, 28s</span></span></button>
+    <button class="card" data-kind="air clip" data-idx="42"><span class="frame"><img loading="lazy" src="poster/c38.jpg" alt="Overhead view of a black Lab digging a large hole at the beach"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">The excavation project.<span class="when">September 2022, 28s</span></span></button>
+    <button class="card" data-kind="air clip" data-idx="43"><span class="frame"><img loading="lazy" src="poster/c34.jpg" alt="Black Lab leaping up toward a low camera on a turf field"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">He met the camera. He jumped at it.<span class="when">September 2022, 7s</span></span></button>
+    <button class="card" data-kind="air clip" data-idx="44"><span class="frame"><img loading="lazy" src="poster/c35.jpg" alt="Black Lab in full sprint chasing a low-flying camera across turf"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Low pass, full sprint.<span class="when">September 2022, 3s</span></span></button>
+    <button class="card" data-kind="photo" data-idx="45"><span class="frame"><img loading="lazy" src="thumb/p43.jpg" alt="A black Lab sitting on a carpet of yellow aspen leaves"></span><span class="cap">Sitting in for aspen season.<span class="when">Autumn 2022</span></span></button>
+    <button class="card" data-kind="photo" data-idx="46"><span class="frame"><img loading="lazy" src="thumb/p44.jpg" alt="A black Lab sitting among red and pink maple leaves, licking its nose"></span><span class="cap">Maple season. Critic satisfied.<span class="when">Autumn 2022</span></span></button>
+  </div>
+</section>
+
+<section class="year">
+  <div class="year-head"><span class="year-num">2023</span><span class="year-note">Growing into the job of being Jetson.</span></div>
+  <div class="grid">
+    <button class="card" data-kind="air clip" data-idx="47"><span class="frame"><img loading="lazy" src="poster/c36.jpg" alt="Wide overhead view of a person throwing a ball for a black Lab, redwoods behind"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Fetch from above, redwoods behind.<span class="when">January 2023, 19s</span></span></button>
+    <button class="card" data-kind="air clip" data-idx="48"><span class="frame"><img loading="lazy" src="poster/c41.jpg" alt="High overhead view of a fetch session on a lined turf field"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Fetch from altitude, first run.<span class="when">February 2023, 28s</span></span></button>
+    <button class="card" data-kind="air clip" data-idx="49"><span class="frame"><img loading="lazy" src="poster/c42.jpg" alt="High overhead view of a fetch session on a lined turf field"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Fetch from altitude, second run.<span class="when">February 2023, 28s</span></span></button>
+    <button class="card" data-kind="photo" data-idx="50"><span class="frame"><img loading="lazy" src="thumb/p46.jpg" alt="A black Lab sitting in bright green ground cover with head tilted"></span><span class="cap">The head tilt, deployed.<span class="when">Spring 2023</span></span></button>
+    <button class="card" data-kind="photo" data-idx="51"><span class="frame"><img loading="lazy" src="thumb/p47.jpg" alt="A black Lab sitting beside blooming yellow daffodils"></span><span class="cap">Daffodil inspection, passed.<span class="when">Spring 2023</span></span></button>
+    <button class="card" data-kind="clip" data-idx="52"><span class="frame"><img loading="lazy" src="poster/c10.jpg" alt="Black Lab fetching an orange ball at a beach cove with a pier"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Orange ball, beach cove.<span class="when">June 2023, 26s</span></span></button>
+    <button class="card" data-kind="photo" data-idx="53"><span class="frame"><img loading="lazy" src="thumb/p45.jpg" alt="Close-up of a black Lab tilting its head toward the camera"></span><span class="cap">Up close and unbothered.<span class="when">2023</span></span></button>
+    <button class="card" data-kind="clip" data-idx="54"><span class="frame"><img loading="lazy" src="poster/c17.jpg" alt="Black Lab sitting by a coffee table during a treat session"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Let’s go see Bella!<span class="when">July 2023, 14s</span></span></button>
+    <button class="card" data-kind="clip" data-idx="55"><span class="frame"><img loading="lazy" src="poster/c11.jpg" alt="Overhead view of a black Lab walking on leash along a sidewalk"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Three seconds of commute.<span class="when">August 2023, 3s</span></span></button>
+    <button class="card" data-kind="photo" data-idx="56"><span class="frame"><img loading="lazy" src="thumb/p31.jpg" alt="A black Lab lying on a floor wearing a trucker cap"></span><span class="cap">The hat stayed on longer than expected.<span class="when">November 2023</span></span></button>
+    <button class="card" data-kind="photo" data-idx="57"><span class="frame"><img loading="lazy" src="thumb/p32.jpg" alt="A black Lab sitting on a wet street beneath a full rainbow over a house"></span><span class="cap">Sitting for the rainbow, as one does.<span class="when">November 2023</span></span></button>
+    <button class="card" data-kind="photo" data-idx="58"><span class="frame"><img loading="lazy" src="thumb/p48.jpg" alt="A black Lab sitting beneath a Christmas wreath with red ornaments"></span><span class="cap">Wreath check.<span class="when">December 2023</span></span></button>
+  </div>
+</section>
+
+<section class="year">
+  <div class="year-head"><span class="year-num">2024</span><span class="year-note">Full grown, mostly. The ears never got the memo.</span></div>
+  <div class="grid">
+    <button class="card" data-kind="clip" data-idx="59"><span class="frame"><img loading="lazy" src="poster/c28.jpg" alt="Black Lab lying calmly under a taproom table, looking up"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Settled in at Wooly’s in Pismo Beach after the fun.<span class="when">January 2024, 30s</span></span></button>
+    <button class="card" data-kind="clip" data-idx="60"><span class="frame"><img loading="lazy" src="poster/c18.jpg" alt="Black Lab pouncing around a deflated ball on a patio"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">The ball lost. He kept playing.<span class="when">March 2024, 12s</span></span></button>
+    <button class="card" data-kind="clip" data-idx="61"><span class="frame"><img loading="lazy" src="poster/c12.jpg" alt="Black Lab running full speed at the camera across a green lawn"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Full tilt, straight at the camera.<span class="when">March 2024, 12s</span></span></button>
+    <button class="card" data-kind="clip" data-idx="62"><span class="frame"><img loading="lazy" src="poster/c20.jpg" alt="Black Lab leaping for a thrown ball on a green lawn"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">The leap.<span class="when">March 2024, 15s</span></span></button>
+    <button class="card" data-kind="clip" data-idx="63"><span class="frame"><img loading="lazy" src="poster/c31.jpg" alt="Black Lab nose-dribbling a soccer-style ball around a lawn"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Dribbling practice, self-taught.<span class="when">March 2024, 28s</span></span></button>
+    <button class="card" data-kind="photo" data-idx="64"><span class="frame"><img loading="lazy" src="thumb/p34.jpg" alt="A black Lab looking up on leash inside a barrel-lined taproom"></span><span class="cap">Mason’s regular.<span class="when">April 2024</span></span></button>
+    <button class="card" data-kind="photo" data-idx="65"><span class="frame"><img loading="lazy" src="thumb/p35.jpg" alt="A black Lab waiting on a wood floor in a taproom"></span><span class="cap">Still at Mason’s, still patient.<span class="when">April 2024</span></span></button>
+    <button class="card" data-kind="clip" data-idx="66"><span class="frame"><img loading="lazy" src="poster/c23.jpg" alt="Black Lab wrestling and rolling with a brown towel on a lawn"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">The towel lost.<span class="when">June 2024, 14s</span></span></button>
+    <button class="card" data-kind="clip" data-idx="67"><span class="frame"><img loading="lazy" src="poster/c24.jpg" alt="Black Lab on a long line walking toward the camera on gravel"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Gravel yard, long line, closing distance.<span class="when">June 2024, 15s</span></span></button>
+    <button class="card" data-kind="clip" data-idx="68"><span class="frame"><img loading="lazy" src="poster/c25.jpg" alt="A hand offering a green rubber toy to a black Lab in a kitchen"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">New toy, formally accepted.<span class="when">June 2024, 19s</span></span></button>
+    <button class="card" data-kind="clip" data-idx="69"><span class="frame"><img loading="lazy" src="poster/c32.jpg" alt="Black Lab digging and pouncing in a blue kiddie pool full of water"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">The pool never stood a chance.<span class="when">August 2024, 28s</span></span></button>
+    <button class="card" data-kind="photo" data-idx="70"><span class="frame"><img loading="lazy" src="thumb/p36.jpg" alt="A black Lab rolling on its back on grass near a small dog"></span><span class="cap">Blissing out at Mile’s Ranch.<span class="when">August 2024</span></span></button>
+    <button class="card" data-kind="photo" data-idx="71"><span class="frame"><img loading="lazy" src="thumb/p37.jpg" alt="A black Lab standing with several other dogs by a fence"></span><span class="cap">Waiting to get in the pool at Mile’s Ranch.<span class="when">August 2024</span></span></button>
+    <button class="card" data-kind="photo" data-idx="72"><span class="frame"><img loading="lazy" src="thumb/p38.jpg" alt="A black Lab mid-play on grass with one ear flipped inside out"></span><span class="cap">Ear deployed, dignity optional.<span class="when">October 2024</span></span></button>
+  </div>
+</section>
+
+<section class="year">
+  <div class="year-head"><span class="year-num">2025</span><span class="year-note">A move east: new state, new ground to cover.</span></div>
+  <div class="grid">
+    <button class="card" data-kind="clip" data-idx="73"><span class="frame"><img loading="lazy" src="poster/c13.jpg" alt="Black Lab in a park in full autumn color"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">Fall color, Franklin.<span class="when">November 2025, 4s</span></span></button>
+  </div>
+</section>
+
+<section class="year">
+  <div class="year-head"><span class="year-num">2026</span><span class="year-note">Franklin: home turf.</span></div>
+  <div class="grid">
+    <button class="card" data-kind="clip" data-idx="74"><span class="frame"><img loading="lazy" src="poster/c14.jpg" alt="Black Lab trotting along a park path"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">The park path, new home turf.<span class="when">May 2026, 10s</span></span></button>
+    <button class="card" data-kind="clip" data-idx="75"><span class="frame"><img loading="lazy" src="poster/c15.jpg" alt="Black Lab making a mid-air catch of a ball in a park"><span class="badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span><span class="cap">The catch.<span class="when">May 2026, 21s</span></span></button>
+  </div>
+</section>
+
+<section class="year">
+  <div class="year-head"><span class="year-num" style="font-size:clamp(1.9rem,4vw,2.7rem)">Portraits</span><span class="year-note">A set of stylized portraits made for brockalston.com, retiring from the site and settling here.</span></div>
+  <div class="grid">
+    <button class="card" data-kind="portrait" data-idx="76"><span class="frame"><img loading="lazy" src="thumb/p49.jpg" alt="Stylized portrait of a black Lab puppy asleep in a fluffy bed with a teddy bear"></span><span class="cap">Asleep with his baby.</span></button>
+    <button class="card" data-kind="portrait" data-idx="77"><span class="frame"><img loading="lazy" src="thumb/p50.jpg" alt="Stylized portrait of a black Lab trotting up a sunlit trail with a stick"></span><span class="cap">Stick acquired.</span></button>
+    <button class="card" data-kind="portrait" data-idx="78"><span class="frame"><img loading="lazy" src="thumb/p51.jpg" alt="Stylized portrait of a black Lab standing on a wooded trail"></span><span class="cap">Timberland Park, off the Natchez Trace.</span></button>
+    <button class="card" data-kind="portrait" data-idx="79"><span class="frame"><img loading="lazy" src="thumb/p52.jpg" alt="Stylized portrait of a black Lab curled under a wooden writing desk"></span><span class="cap">Supervising the writing desk.</span></button>
+    <button class="card" data-kind="portrait" data-idx="80"><span class="frame"><img loading="lazy" src="thumb/p53.jpg" alt="Stylized portrait of a black Lab sitting on a porch beside worn leather boots"></span><span class="cap">The boots stay outside.</span></button>
+    <button class="card" data-kind="portrait" data-idx="81"><span class="frame"><img loading="lazy" src="thumb/p54.jpg" alt="Stylized portrait of a man and a black Lab sitting together on a porch"></span><span class="cap">Porch duty, Tennessee.</span></button>
+    <button class="card" data-kind="portrait" data-idx="82"><span class="frame"><img loading="lazy" src="thumb/p55.jpg" alt="Stylized portrait of a man walking a black Lab down a brick sidewalk at golden hour"></span><span class="cap">Main Street, evening walk.</span></button>
+    <button class="card" data-kind="portrait" data-idx="83"><span class="frame"><img loading="lazy" src="thumb/p56.jpg" alt="Stylized portrait of a black Lab sitting on a brick sidewalk downtown"></span><span class="cap">Downtown Franklin.</span></button>
+  </div>
+</section>
+
+<footer>
+  <p>Forty-one photographs, thirty-five clips, and eight portraits, 2021&ndash;2026.</p>
+  <p>Jetson appears courtesy of Jetson, for an undisclosed number of tennis balls.</p>
+</footer>
+
+<div class="lb" role="dialog" aria-modal="true" aria-label="Media viewer">
+  <button class="lb-btn lb-close" aria-label="Close">&#215;</button>
+  <button class="lb-btn lb-prev" aria-label="Previous">&#8249;</button>
+  <button class="lb-btn lb-next" aria-label="Next">&#8250;</button>
+  <div class="lb-inner">
+    <div class="lb-media"></div>
+    <div class="lb-cap"><span class="text"></span><span class="when"></span></div>
+  </div>
+</div>
+
+<script>
+const ITEMS=[{"t": "img", "src": "img/p39.jpg", "cap": "The whole crew, in black and white. Jetson far left.", "when": "March 2021", "alt": "Black-and-white photo of a litter of Labrador puppies asleep on a cot, one yellow puppy at right"}, {"t": "vid", "src": "vid/c01.mp4", "poster": "poster/c01.jpg", "cap": "Dinner via slow feeder. It did not slow him much.", "when": "Spring 2021, 9s", "alt": "Tiny black Lab puppy eating from a blue slow-feeder bowl"}, {"t": "img", "src": "img/p01.jpg", "cap": "The litter at five weeks old. Jetson is on the far left.", "when": "February 2021", "alt": "A row of young Labrador puppies, black and yellow, asleep on a gray blanket"}, {"t": "img", "src": "img/p02.jpg", "cap": "Seven weeks old, cot at capacity.", "when": "March 2021", "alt": "Six black Lab puppies and one yellow puppy piled on a red cot outdoors"}, {"t": "img", "src": "img/p03.jpg", "cap": "First meeting at the breeder.", "when": "March 2021", "alt": "A black Lab puppy standing on pavement, looking up at the camera"}, {"t": "img", "src": "img/p04.jpg", "cap": "New house, approved rug.", "when": "April 2021", "alt": "A black Lab puppy sprawled asleep on a shaggy gray rug, seen from above"}, {"t": "vid", "src": "vid/c16.mp4", "poster": "poster/c16.jpg", "cap": "The great paper bag campaign. Sound on.", "when": "April 2021, 17s", "alt": "Black Lab puppy on a hardwood floor wrestling a paper grocery bag"}, {"t": "img", "src": "img/p05.jpg", "cap": "Belly up, fully off duty.", "when": "April 2021", "alt": "A black Lab puppy asleep on its back on carpet, belly showing"}, {"t": "img", "src": "img/p06.jpg", "cap": "An early formal portrait.", "when": "April 2021", "alt": "A black Lab puppy sitting neatly on gravel"}, {"t": "img", "src": "img/p07.jpg", "cap": "The bed was claimed early.", "when": "April 2021", "alt": "A black Lab puppy asleep on white bedding"}, {"t": "img", "src": "img/p40.jpg", "cap": "The stare that got him everything.", "when": "Spring 2021", "alt": "Close overhead view of a black Lab puppy looking straight up at the camera"}, {"t": "vid", "src": "vid/c03.mp4", "poster": "poster/c03.jpg", "cap": "Zoomies, hardwood edition. Sound on.", "when": "May 2021, 25s", "alt": "Black Lab puppy racing in circles on a hardwood floor"}, {"t": "img", "src": "img/p08.jpg", "cap": "Waiting on dinner, politely.", "when": "May 2021", "alt": "A black Lab puppy sitting on a hardwood floor, looking up"}, {"t": "vid", "src": "vid/c04.mp4", "poster": "poster/c04.jpg", "cap": "Bathtub step, red Kong, full sploot.", "when": "May 2021, 25s", "alt": "Black Lab puppy lying flat on a step chewing a red toy"}, {"t": "img", "src": "img/p09.jpg", "cap": "Leash walk, maximum grin.", "when": "May 2021", "alt": "A black Lab puppy on a leash on a sandy path, mouth open happily"}, {"t": "vid", "src": "vid/c05.mp4", "poster": "poster/c05.jpg", "cap": "The leaves started it.", "when": "May 2021, 25s", "alt": "Black Lab puppy leaping at low tree leaves in a backyard"}, {"t": "img", "src": "img/p10.jpg", "cap": "The bone put up a fight.", "when": "May 2021", "alt": "A black Lab puppy on its back on a shaggy rug, wrestling a chew bone"}, {"t": "img", "src": "img/p17.jpg", "cap": "Parking spot: under the table.", "when": "May 2021", "alt": "A black Lab puppy asleep under a round concrete coffee table"}, {"t": "img", "src": "img/p41.jpg", "cap": "First look at the Pacific, considered at length.", "when": "May 2021", "alt": "A black Lab seen from behind, sitting on a bluff facing a foggy ocean"}, {"t": "img", "src": "img/p19.jpg", "cap": "Deep sleep, close range.", "when": "June 2021", "alt": "Close-up of a black Lab puppy sound asleep on a shaggy rug"}, {"t": "img", "src": "img/p18.jpg", "cap": "The hydrant series begins.", "when": "June 2021", "alt": "A black Lab puppy sitting beside a pale fire hydrant on a sunny sidewalk"}, {"t": "img", "src": "img/p20.jpg", "cap": "The hydrant, one month on.", "when": "July 2021", "alt": "A young black Lab sitting beside the same fire hydrant, noticeably bigger"}, {"t": "img", "src": "img/p21.jpg", "cap": "The hydrant, gaining.", "when": "July 2021", "alt": "A young black Lab sitting beside a fire hydrant on a sidewalk"}, {"t": "img", "src": "img/p22.jpg", "cap": "The hydrant, nearly level.", "when": "August 2021", "alt": "A black Lab sitting beside a fire hydrant, nearly its height"}, {"t": "img", "src": "img/p23.jpg", "cap": "The hydrant, surpassed.", "when": "September 2021", "alt": "A grown black Lab sitting beside a fire hydrant, now taller than it"}, {"t": "vid", "src": "vid/c06.mp4", "poster": "poster/c06.jpg", "cap": "Ball delivered. Your move.", "when": "October 2021, 14s", "alt": "Black Lab standing over a ball on a turf field, staring at the camera"}, {"t": "img", "src": "img/p24.jpg", "cap": "Incognito.", "when": "November 2021", "alt": "A black Lab wearing silver sunglasses, close up"}, {"t": "vid", "src": "vid/c07.mp4", "poster": "poster/c07.jpg", "cap": "A hillside meadow, surveyed.", "when": "December 2021, 22s", "alt": "Wide landscape of a black Lab in a hillside meadow with a mountain vista"}, {"t": "img", "src": "img/p25.jpg", "cap": "December delivery, self-assigned.", "when": "December 2021", "alt": "A black Lab carrying a large striped Christmas toy through a house"}, {"t": "vid", "src": "vid/c08.mp4", "poster": "poster/c08.jpg", "cap": "The tail never stops.", "when": "January 2022, 18s", "alt": "Black Lab on a soccer field, tail mid-wag"}, {"t": "vid", "src": "vid/c09.mp4", "poster": "poster/c09.jpg", "cap": "Surf work at Pismo Beach.", "when": "January 2022, 28s", "alt": "Black Lab playing in the surf at a wide sandy beach"}, {"t": "vid", "src": "vid/c26.mp4", "poster": "poster/c26.jpg", "cap": "Golden hour at Grover Beach.", "when": "March 2022, 28s", "alt": "Black Lab with a ball on wet sand at golden hour, running into the surf"}, {"t": "vid", "src": "vid/c27.mp4", "poster": "poster/c27.jpg", "cap": "Turf, ball, business as usual.", "when": "March 2022, 23s", "alt": "Black Lab chasing a ball across a bright green turf field"}, {"t": "vid", "src": "vid/c30.mp4", "poster": "poster/c30.jpg", "cap": "Long fetch, full field.", "when": "April 2022, 28s", "alt": "Black Lab sprinting long fetch runs across an open park lawn"}, {"t": "img", "src": "img/p26.jpg", "cap": "Super-Incognito.", "when": "April 2022", "alt": "A black Lab mid head-shake on a dry trail, ears flying"}, {"t": "img", "src": "img/p27.jpg", "cap": "Shoreline patrol.", "when": "May 2022", "alt": "A black Lab standing on wet sand at the shoreline"}, {"t": "img", "src": "img/p28.jpg", "cap": "A standoff with Binx. No winner declared.", "when": "May 2022", "alt": "A black Lab watching a black cat perched on a small table by a window"}, {"t": "img", "src": "img/p29.jpg", "cap": "Under the cafe table, watching for crumbs.", "when": "May 2022", "alt": "A black Lab looking up at the camera from under a cafe table"}, {"t": "img", "src": "img/p30.jpg", "cap": "Sand: investigated thoroughly.", "when": "June 2022", "alt": "A black Lab sitting on a beach with sand covering its nose"}, {"t": "img", "src": "img/p42.jpg", "cap": "Front and square.", "when": "2022", "alt": "A young black Lab standing in green grass, looking at the camera"}, {"t": "vid", "src": "vid/c33.mp4", "poster": "poster/c33.jpg", "cap": "Overhead: astroturf, lots of bouncing.", "when": "August 2022, 6s", "alt": "Straight-down overhead view of a black Lab rolling on its back on turf"}, {"t": "vid", "src": "vid/c37.mp4", "poster": "poster/c37.jpg", "cap": "The roll, then the reveal.", "when": "August 2022, 28s", "alt": "Overhead view of a black Lab rolling in grass, pulling back to show the yard"}, {"t": "vid", "src": "vid/c38.mp4", "poster": "poster/c38.jpg", "cap": "The excavation project.", "when": "September 2022, 28s", "alt": "Overhead view of a black Lab digging a large hole at the beach"}, {"t": "vid", "src": "vid/c34.mp4", "poster": "poster/c34.jpg", "cap": "He met the camera. He jumped at it.", "when": "September 2022, 7s", "alt": "Black Lab leaping up toward a low camera on a turf field"}, {"t": "vid", "src": "vid/c35.mp4", "poster": "poster/c35.jpg", "cap": "Low pass, full sprint.", "when": "September 2022, 3s", "alt": "Black Lab in full sprint chasing a low-flying camera across turf"}, {"t": "img", "src": "img/p43.jpg", "cap": "Sitting in for aspen season.", "when": "Autumn 2022", "alt": "A black Lab sitting on a carpet of yellow aspen leaves"}, {"t": "img", "src": "img/p44.jpg", "cap": "Maple season. Critic satisfied.", "when": "Autumn 2022", "alt": "A black Lab sitting among red and pink maple leaves, licking its nose"}, {"t": "vid", "src": "vid/c36.mp4", "poster": "poster/c36.jpg", "cap": "Fetch from above, redwoods behind.", "when": "January 2023, 19s", "alt": "Wide overhead view of a person throwing a ball for a black Lab, redwoods behind"}, {"t": "vid", "src": "vid/c41.mp4", "poster": "poster/c41.jpg", "cap": "Fetch from altitude, first run.", "when": "February 2023, 28s", "alt": "High overhead view of a fetch session on a lined turf field"}, {"t": "vid", "src": "vid/c42.mp4", "poster": "poster/c42.jpg", "cap": "Fetch from altitude, second run.", "when": "February 2023, 28s", "alt": "High overhead view of a fetch session on a lined turf field"}, {"t": "img", "src": "img/p46.jpg", "cap": "The head tilt, deployed.", "when": "Spring 2023", "alt": "A black Lab sitting in bright green ground cover with head tilted"}, {"t": "img", "src": "img/p47.jpg", "cap": "Daffodil inspection, passed.", "when": "Spring 2023", "alt": "A black Lab sitting beside blooming yellow daffodils"}, {"t": "vid", "src": "vid/c10.mp4", "poster": "poster/c10.jpg", "cap": "Orange ball, beach cove.", "when": "June 2023, 26s", "alt": "Black Lab fetching an orange ball at a beach cove with a pier"}, {"t": "img", "src": "img/p45.jpg", "cap": "Up close and unbothered.", "when": "2023", "alt": "Close-up of a black Lab tilting its head toward the camera"}, {"t": "vid", "src": "vid/c17.mp4", "poster": "poster/c17.jpg", "cap": "Let\u2019s go see Bella!", "when": "July 2023, 14s", "alt": "Black Lab sitting by a coffee table during a treat session"}, {"t": "vid", "src": "vid/c11.mp4", "poster": "poster/c11.jpg", "cap": "Three seconds of commute.", "when": "August 2023, 3s", "alt": "Overhead view of a black Lab walking on leash along a sidewalk"}, {"t": "img", "src": "img/p31.jpg", "cap": "The hat stayed on longer than expected.", "when": "November 2023", "alt": "A black Lab lying on a floor wearing a trucker cap"}, {"t": "img", "src": "img/p32.jpg", "cap": "Sitting for the rainbow, as one does.", "when": "November 2023", "alt": "A black Lab sitting on a wet street beneath a full rainbow over a house"}, {"t": "img", "src": "img/p48.jpg", "cap": "Wreath check.", "when": "December 2023", "alt": "A black Lab sitting beneath a Christmas wreath with red ornaments"}, {"t": "vid", "src": "vid/c28.mp4", "poster": "poster/c28.jpg", "cap": "Settled in at Wooly\u2019s in Pismo Beach after the fun.", "when": "January 2024, 30s", "alt": "Black Lab lying calmly under a taproom table, looking up"}, {"t": "vid", "src": "vid/c18.mp4", "poster": "poster/c18.jpg", "cap": "The ball lost. He kept playing.", "when": "March 2024, 12s", "alt": "Black Lab pouncing around a deflated ball on a patio"}, {"t": "vid", "src": "vid/c12.mp4", "poster": "poster/c12.jpg", "cap": "Full tilt, straight at the camera.", "when": "March 2024, 12s", "alt": "Black Lab running full speed at the camera across a green lawn"}, {"t": "vid", "src": "vid/c20.mp4", "poster": "poster/c20.jpg", "cap": "The leap.", "when": "March 2024, 15s", "alt": "Black Lab leaping for a thrown ball on a green lawn"}, {"t": "vid", "src": "vid/c31.mp4", "poster": "poster/c31.jpg", "cap": "Dribbling practice, self-taught.", "when": "March 2024, 28s", "alt": "Black Lab nose-dribbling a soccer-style ball around a lawn"}, {"t": "img", "src": "img/p34.jpg", "cap": "Mason\u2019s regular.", "when": "April 2024", "alt": "A black Lab looking up on leash inside a barrel-lined taproom"}, {"t": "img", "src": "img/p35.jpg", "cap": "Still at Mason\u2019s, still patient.", "when": "April 2024", "alt": "A black Lab waiting on a wood floor in a taproom"}, {"t": "vid", "src": "vid/c23.mp4", "poster": "poster/c23.jpg", "cap": "The towel lost.", "when": "June 2024, 14s", "alt": "Black Lab wrestling and rolling with a brown towel on a lawn"}, {"t": "vid", "src": "vid/c24.mp4", "poster": "poster/c24.jpg", "cap": "Gravel yard, long line, closing distance.", "when": "June 2024, 15s", "alt": "Black Lab on a long line walking toward the camera on gravel"}, {"t": "vid", "src": "vid/c25.mp4", "poster": "poster/c25.jpg", "cap": "New toy, formally accepted.", "when": "June 2024, 19s", "alt": "A hand offering a green rubber toy to a black Lab in a kitchen"}, {"t": "vid", "src": "vid/c32.mp4", "poster": "poster/c32.jpg", "cap": "The pool never stood a chance.", "when": "August 2024, 28s", "alt": "Black Lab digging and pouncing in a blue kiddie pool full of water"}, {"t": "img", "src": "img/p36.jpg", "cap": "Blissing out at Mile\u2019s Ranch.", "when": "August 2024", "alt": "A black Lab rolling on its back on grass near a small dog"}, {"t": "img", "src": "img/p37.jpg", "cap": "Waiting to get in the pool at Mile\u2019s Ranch.", "when": "August 2024", "alt": "A black Lab standing with several other dogs by a fence"}, {"t": "img", "src": "img/p38.jpg", "cap": "Ear deployed, dignity optional.", "when": "October 2024", "alt": "A black Lab mid-play on grass with one ear flipped inside out"}, {"t": "vid", "src": "vid/c13.mp4", "poster": "poster/c13.jpg", "cap": "Fall color, Franklin.", "when": "November 2025, 4s", "alt": "Black Lab in a park in full autumn color"}, {"t": "vid", "src": "vid/c14.mp4", "poster": "poster/c14.jpg", "cap": "The park path, new home turf.", "when": "May 2026, 10s", "alt": "Black Lab trotting along a park path"}, {"t": "vid", "src": "vid/c15.mp4", "poster": "poster/c15.jpg", "cap": "The catch.", "when": "May 2026, 21s", "alt": "Black Lab making a mid-air catch of a ball in a park"}, {"t": "img", "src": "img/p49.jpg", "cap": "Asleep with his baby.", "when": "", "alt": "Stylized portrait of a black Lab puppy asleep in a fluffy bed with a teddy bear"}, {"t": "img", "src": "img/p50.jpg", "cap": "Stick acquired.", "when": "", "alt": "Stylized portrait of a black Lab trotting up a sunlit trail with a stick"}, {"t": "img", "src": "img/p51.jpg", "cap": "Timberland Park, off the Natchez Trace.", "when": "", "alt": "Stylized portrait of a black Lab standing on a wooded trail"}, {"t": "img", "src": "img/p52.jpg", "cap": "Supervising the writing desk.", "when": "", "alt": "Stylized portrait of a black Lab curled under a wooden writing desk"}, {"t": "img", "src": "img/p53.jpg", "cap": "The boots stay outside.", "when": "", "alt": "Stylized portrait of a black Lab sitting on a porch beside worn leather boots"}, {"t": "img", "src": "img/p54.jpg", "cap": "Porch duty, Tennessee.", "when": "", "alt": "Stylized portrait of a man and a black Lab sitting together on a porch"}, {"t": "img", "src": "img/p55.jpg", "cap": "Main Street, evening walk.", "when": "", "alt": "Stylized portrait of a man walking a black Lab down a brick sidewalk at golden hour"}, {"t": "img", "src": "img/p56.jpg", "cap": "Downtown Franklin.", "when": "", "alt": "Stylized portrait of a black Lab sitting on a brick sidewalk downtown"}];
+const lb=document.querySelector(".lb"),media=lb.querySelector(".lb-media"),
+      capT=lb.querySelector(".lb-cap .text"),capW=lb.querySelector(".lb-cap .when");
+let cur=0,lastFocus=null,visible=[...ITEMS.keys()];
+function show(i){
+  const pos=visible.indexOf(i);
+  cur = pos>=0 ? i : visible[0];
+  const it=ITEMS[cur];
+  media.innerHTML = it.t==="vid"
+    ? `<video controls playsinline preload="metadata" poster="${it.poster}" src="${it.src}"></video>`
+    : `<img src="${it.src}" alt="${it.alt.replace(/"/g,'&quot;')}">`;
+  capT.textContent=it.cap; capW.textContent=it.when;
+  if(it.t==="vid") media.querySelector("video").play().catch(()=>{});
+}
+function step(d){
+  const pos=visible.indexOf(cur);
+  show(visible[(pos+d+visible.length)%visible.length]);
+}
+function openLb(i){lastFocus=document.activeElement;show(i);lb.classList.add("open");lb.querySelector(".lb-close").focus();document.body.style.overflow="hidden";}
+function closeLb(){lb.classList.remove("open");media.innerHTML="";document.body.style.overflow="";if(lastFocus)lastFocus.focus();}
+document.querySelectorAll(".card").forEach(c=>c.addEventListener("click",()=>openLb(+c.dataset.idx)));
+lb.querySelector(".lb-close").addEventListener("click",closeLb);
+lb.querySelector(".lb-prev").addEventListener("click",()=>step(-1));
+lb.querySelector(".lb-next").addEventListener("click",()=>step(1));
+lb.addEventListener("click",e=>{if(e.target===lb)closeLb();});
+document.addEventListener("keydown",e=>{
+  if(!lb.classList.contains("open"))return;
+  if(e.key==="Escape")closeLb();
+  if(e.key==="ArrowLeft")step(-1);
+  if(e.key==="ArrowRight")step(1);
+});
+document.querySelectorAll(".chip").forEach(ch=>ch.addEventListener("click",()=>{
+  document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed","false"));
+  ch.setAttribute("aria-pressed","true");
+  const k=ch.dataset.kind;
+  visible=[];
+  document.querySelectorAll(".card").forEach(card=>{
+    const on = k==="all" || card.dataset.kind.split(" ").includes(k);
+    card.hidden = !on;
+    if(on) visible.push(+card.dataset.idx);
+  });
+  document.querySelectorAll(".year").forEach(y=>{
+    y.style.display=[...y.querySelectorAll(".card")].some(c=>!c.hidden)?"":"none";
+  });
+}));
+</script>
+</body>
+</html>
