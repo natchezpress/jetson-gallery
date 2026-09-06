@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Real Jetson</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQLVEN820R"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','G-ZQLVEN820R');
+function ga(ev,params){try{gtag('event',ev,params||{})}catch(e){}}
+</script>
+
 <meta name="description" content="Photographs and clips of Jetson, the real black Labrador behind the novel Jetson&rsquo;s Journey, 2021 to 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -240,7 +247,12 @@ function show(i){
     ? `<video controls playsinline preload="metadata" poster="${it.poster}" src="${it.src}"></video>`
     : `<img src="${it.src}" alt="${it.alt.replace(/"/g,'&quot;')}">`;
   capT.textContent=it.cap; capW.textContent=it.when;
-  if(it.t==="vid") media.querySelector("video").play().catch(()=>{});
+  ga("lightbox_open",{item_id:it.src,item_name:it.cap});
+  if(it.t==="vid"){
+    const v=media.querySelector("video");
+    v.addEventListener("play",()=>ga("video_play",{item_id:it.src,item_name:it.cap}),{once:true});
+    v.play().catch(()=>{});
+  }
 }
 function step(d){
   const pos=visible.indexOf(cur);
@@ -263,6 +275,7 @@ document.querySelectorAll(".chip").forEach(ch=>ch.addEventListener("click",()=>{
   document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed","false"));
   ch.setAttribute("aria-pressed","true");
   const k=ch.dataset.kind;
+  ga("filter_tap",{filter_name:ch.textContent.trim()});
   visible=[];
   document.querySelectorAll(".card").forEach(card=>{
     const on = k==="all" || card.dataset.kind.split(" ").includes(k);
